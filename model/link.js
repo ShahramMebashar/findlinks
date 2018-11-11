@@ -6,10 +6,18 @@ var ObjectId = Schema.Types.ObjectId;
 
 var linkSchema = new Schema({
     id: ObjectId,
-    type: String,
+    url: String,
     title: { type: String, required: true},
+    category: String,
     logo: String,
-    categoryID: String,
+    categoryID: ObjectId,
+    socials:{
+        facebook: String,
+        twitter: String,
+        linkdin: String,
+        snapchat: String,
+        instagram: String
+    },
     createdBy: {type: String, default: 'FindLinks' },
     createdAt: { type: Date, default: Date.now},
     updatedAt: { type: Date, default: Date.now }
