@@ -38,17 +38,21 @@ mongoose.connect(`${dbConfig.URL}:${dbConfig.PORT}/${dbConfig.dbName}`, {useNewU
 });
 
 //Routes
-var home      = require('./routes/home');
+var homeRoute    = require('./routes/home');
 var linksRoute   = require('./routes/links');
-var socialRoute = require('./routes/social');
+var socialRoute  = require('./routes/social');
+var liveTvRoute  = require('./routes/livetv');
+var youtubeRoute = require('./routes/youtube');
 
 //Load data
 const posts = require('./playground/data').posts;
 
 //Routes
-app.use(home);
+app.use(homeRoute);
 app.use('/links', linksRoute);
-app.use('/social', socialRoute)
+app.use('/social', socialRoute);
+app.use('/youtube', youtubeRoute);
+app.use('/livetv', liveTvRoute);
 
 
 //Create server
