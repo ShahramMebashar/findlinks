@@ -47,12 +47,19 @@ var youtubeRoute = require('./routes/youtube');
 //Load data
 const posts = require('./playground/data').posts;
 
-//Routes
+//Routes 
 app.use(homeRoute);
 app.use('/links', linksRoute);
 app.use('/social', socialRoute);
 app.use('/youtube', youtubeRoute);
 app.use('/livetv', liveTvRoute);
+
+//404  not fount
+app.use(function(req, res) {
+    res
+    .status(404)
+    .render('404');
+});
 
 
 //Create server
