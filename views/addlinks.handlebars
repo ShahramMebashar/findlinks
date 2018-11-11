@@ -1,0 +1,27 @@
+<div class="jumbotron">
+    <div class="container">
+    <div class="col-md-7 col-xs-12 m-auto">
+        <h1 class="display-2">Add your link</h1>
+    <form action="/add" method="POST">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" id="title" class="form-control" name="title">
+        </div>
+        <div class="form-group">
+            <label for="url">Url</label>
+            <input type="text" id="title" class="form-control" name="url" placeholder="https://example.com">
+        </div>
+        <div class="form-group">
+            <label for="category">Category</label>
+            <select name="category" id="category" class="form-control">
+                <option value="tv">Tv</option>
+                <option value="education">Education</option>
+                <option value="Graphic">Graphic</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Add</button>
+
+    </form>
+    </div>
+</div>
+</div>
