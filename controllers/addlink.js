@@ -1,14 +1,17 @@
 var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+var moment   = require('moment');
+var Schema   = mongoose.Schema;
 var ObjectId = Schema.ObjectId;
-var Link = require('../model/link.model');
+var Link     = require('../model/link.model');
 
 function addlinkController(req, res) {
     var link = new Link({
-        title: 'test',
+        title: 'Rudaw TV',
         url: 'https://google.com',
-        lang: 'kurdishs',
-        status: 'pending'
+        lang: 'Eng',
+        status: 'published',
+        createdAt: moment().format('MM DD YYYY'),
+        updatedAt: moment().format('MM DD YYYY')
     });
 
     Link

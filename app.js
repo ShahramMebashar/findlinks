@@ -48,8 +48,8 @@ const posts = require('./playground/data').posts;
 
 //Routes
 app.use(home);
-app.use('/link', addlink);
-app.use('/addsocial', addsocial)
+app.use('/links', addlink);
+app.use('/social', addsocial)
 
 
 //Create server
