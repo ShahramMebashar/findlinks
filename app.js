@@ -37,19 +37,18 @@ mongoose.connect(`${dbConfig.URL}:${dbConfig.PORT}/${dbConfig.dbName}`, {useNewU
     console.log('successfuly connected to database');
 });
 
-
 //Routes
 var home      = require('./routes/home');
-var addlink   = require('./routes/addlink');
-var addsocial = require('./routes/addsocial');
+var linksRoute   = require('./routes/links');
+var socialRoute = require('./routes/social');
 
 //Load data
 const posts = require('./playground/data').posts;
 
 //Routes
 app.use(home);
-app.use('/links', addlink);
-app.use('/social', addsocial)
+app.use('/links', linksRoute);
+app.use('/social', socialRoute)
 
 
 //Create server
