@@ -1,0 +1,40 @@
+{
+  "name": "findlinkssite",
+  "version": "1.0.0",
+  "description": "Find links website project",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShahramMebashar/findlinks.git"
+  },
+  "keywords": [
+    "links",
+    "nodejs",
+    "expressjs",
+    "find",
+    "web",
+    "html",
+    "css"
+  ],
+  "author": "Shahram Mebashar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShahramMebashar/findlinks/issues"
+  },
+  "homepage": "https://github.com/ShahramMebashar/findlinks#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "multer": "^1.4.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.8.0",
+    "morgan": "^1.9.1"
+  }
+}
