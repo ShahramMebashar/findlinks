@@ -4,20 +4,11 @@ var path       = require('path');
 var bodyParser = require('body-parser');
 var exphbs     = require('express-handlebars');
 var logger     = require('morgan');
-
-//TODO: 
+var mongoose   = require('mongoose');
+var dbConfig   = require('./config/db');
 
 //App init
 var app = express();
-
-//Routes
-var home      = require('./routes/home');
-var addlink   = require('./routes/addlink');
-var addsocial = require('./routes/addsocial');
-
-//Load data
-const posts = require('./playground/data').posts;
-
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
@@ -37,6 +28,23 @@ app.engine('handlebars', exphbs({
 app.set('view engine', 'handlebars');
 app.set('views', path.resolve(__dirname, 'views'));
 
+//Database connection
+mongoose.connect(`${dbConfig.URL}:${dbConfig.PORT}/${dbConfig.dbName}`, {useNewUrlParser: true}, function (err) {
+    if(err) {
+        console.log(err);
+        return;
+    }
+    console.log('successfuly connected to database');
+});
+
+
+//Routes
+var home      = require('./routes/home');
+var addlink   = require('./routes/addlink');
+var addsocial = require('./routes/addsocial');
+
+//Load data
+const posts = require('./playground/data').posts;
 
 //Routes
 app.use(home);
