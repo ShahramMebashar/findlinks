@@ -13,8 +13,8 @@ var app = express();
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(express.static(path.resolve(__dirname, 'public')));
-app.disable('x-powered-by');
 app.use(logger('dev'));
+app.disable('x-powered-by');
 
 app.engine('handlebars', exphbs({
     defaultLayout: 'default.handlebars',
