@@ -5,6 +5,8 @@ var bodyParser = require('body-parser');
 var exphbs     = require('express-handlebars');
 var logger     = require('morgan');
 
+//TODO: 
+
 //App init
 var app = express();
 
@@ -15,10 +17,7 @@ var addsocial = require('./routes/addsocial');
 
 //Load data
 const posts = require('./playground/data').posts;
-const pages = {
-    perPage: 4,
-    pages: Math.floor(posts.length / this.perPage),
-};
+
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
