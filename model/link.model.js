@@ -33,6 +33,15 @@ var linkSchema = new Schema({
     updatedAt: { type: Date, default: Date.now }
 });
 
-var Link = mongoose.model('Link', linkSchema);
+//var Link = mongoose.model('Link', linkSchema);
+
+let Link
+try {
+    //if Link model exist use it
+    Link = mongoose.model('Link');
+} catch (error) {
+    //otherwise create new model;
+    Link = mongoose.model('Link', linkSchema);
+}
 
 module.exports = Link;
