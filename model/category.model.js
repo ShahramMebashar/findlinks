@@ -5,7 +5,7 @@ var ObjectId = Schema.Types.ObjectId;
 
 
 var categorySchema = new Schema({
-    id: ObjectId,
+    _id: ObjectId,
     title: { 
         type: String, 
         required: true, 
@@ -14,6 +14,7 @@ var categorySchema = new Schema({
     slug: String
 });
 
-var Category = mongoose.model('Link', categorySchema);
+var Category = mongoose.model('Category', categorySchema);
+
 
 module.exports = Category;

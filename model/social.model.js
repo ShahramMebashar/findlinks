@@ -4,16 +4,18 @@ var Schema   = mongoose.Schema;
 var ObjectId = Schema.Types.ObjectId;
 
 var socialSchema = new Schema({
-    id: ObjectId,
+    _id: ObjectId,
     title: String,
     lang: '',
-    categoryId: ObjectId,
+    status: String,
+    approved: Boolean,
+    categories: [],
     facebook: String,
     twitter: String,
     instagram: String,
     linkdin: String,
     snapchat: String,
-    youtube: String
+    youtube: String,
 });
 
 

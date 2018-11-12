@@ -5,16 +5,18 @@ var ObjectId = Schema.Types.ObjectId;
 
 
 var linkSchema = new Schema({
-    id: ObjectId,
+    _id: ObjectId,
     url: String,
     title: { 
         type: String, 
         required: true
     },
-    category: String,
     logo: String,
     lang: String,
-    categoryID: ObjectId,
+    categories: [],
+    status: String,
+    approved: Boolean,
+    hits: Number,
     socials:{
         facebook: String,
         twitter: String,

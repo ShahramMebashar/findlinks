@@ -10,12 +10,7 @@ var dbConfig   = require('./config/db');
 //App init
 var app = express();
 
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(bodyParser.json());
-app.use(express.static(path.resolve(__dirname, 'public')));
-app.use(logger('dev'));
-app.disable('x-powered-by');
-
+//View settings
 app.engine('handlebars', exphbs({
     defaultLayout: 'default.handlebars',
     //extname: '',
@@ -27,6 +22,22 @@ app.engine('handlebars', exphbs({
 }));
 app.set('view engine', 'handlebars');
 app.set('views', path.resolve(__dirname, 'views'));
+//App middlewares and settings
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+app.use(express.static(path.resolve(__dirname, 'public')));
+app.disable('x-powered-by');
+
+//Development settings
+if(app.get('env') === 'development') {
+    app.use(logger('dev'));
+    app.use(express.errorHandler());
+}
+
+//Production settings
+if(app.get('env') === 'production') {
+    app.set('trust proxy', true);
+}
 
 //Database connection
 mongoose.connect(`${dbConfig.URL}:${dbConfig.PORT}/${dbConfig.dbName}`, {useNewUrlParser: true}, function (err) {
@@ -60,6 +71,7 @@ app.use(function(req, res) {
     .status(404)
     .render('404');
 });
+
 
 
 //Create server
