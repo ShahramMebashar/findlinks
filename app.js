@@ -57,9 +57,9 @@ const posts = require('./playground/data').posts;
 //Routes 
 app.use(homeRoute);
 app.use('/links', linksRoute);
-app.use('/social', socialRoute);
-app.use('/youtube', youtubeRoute);
-app.use('/livetv', liveTvRoute);
+app.use('/social-medias', socialRoute);
+app.use('/youtube-channels', youtubeRoute);
+app.use('/live-tvs', liveTvRoute);
 
 
 //Admin panel
