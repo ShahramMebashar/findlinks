@@ -11,16 +11,16 @@ var dbConfig   = require('./config/db');
 var app = express();
 
 //View settings
-app.engine('handlebars', exphbs({
-    defaultLayout: 'default.handlebars',
-    //extname: '',
+app.engine('hbs', exphbs({
+    defaultLayout: 'default.hbs',
+    extname: 'hbs',
     helpers: {
         test() {
             return app.get('title');
         }
     }
 }));
-app.set('view engine', 'handlebars');
+app.set('view engine', 'hbs');
 app.set('views', path.resolve(__dirname, 'views'));
 //App middlewares and settings
 app.use(bodyParser.urlencoded({extended: false}));
@@ -63,7 +63,7 @@ app.use('/livetv', liveTvRoute);
 
 
 //Admin panel
-var adminHomeRoute = require('./routes/admin/home');
+var adminHomeRoute = require('./routes/admin/adminHome');
 
 //Admin Routes
 app.use('/admin', adminHomeRoute);
