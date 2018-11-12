@@ -2,10 +2,10 @@ var mongoose = require('mongoose');
 var moment   = require('moment');
 var Schema   = mongoose.Schema;
 var ObjectId = Schema.ObjectId;
-var Link     = require('../model/link.model');
 
 function addlinkController(req, res) {
-    var link = new Link({
+    var Link     = require('../model/link.model');
+    var website = new Link({
         title: 'Rudaw TV',
         url: 'https://google.com',
         lang: 'Eng',
@@ -15,18 +15,20 @@ function addlinkController(req, res) {
     });
 
     Link
-    .insertMany(link)
+    .insertMany(website)
     .then(function (result) {
         var showResult = {
             status: result.length >= 1 ? 'sucess' : 'fail'
         }
-        res.json(showResult);
+        res.status(200).json(showResult);
     })
     .catch(function (err) {
         console.log(err);
         res.sendStatus(404).end(JSON.stringify(err, null, 2));
+        return;
     });
-
+    
+    
 }
 
 

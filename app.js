@@ -87,6 +87,10 @@ if(app.get('env') === 'development') {
 //Create server
 var PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => {
-    console.log(`server started on port ${PORT}`);
-});
+if(!module.parent) {
+    app.listen(PORT, () => {
+        console.log(`server started on port ${PORT}`);
+    });
+}
+
+module.exports = app;
