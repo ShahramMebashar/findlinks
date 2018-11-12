@@ -16,7 +16,10 @@ var linkSchema = new Schema({
     categories: [],
     status: String,
     approved: Boolean,
-    hits: Number,
+    hits: {
+        type: Number,
+        default: 0
+    },
     socials:{
         facebook: String,
         twitter: String,
