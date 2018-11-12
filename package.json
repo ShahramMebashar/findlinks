@@ -5,6 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js",
+    "prod": "NODE_ENV=production nodemon app.js",
+    "debug": "DEBUG=express:* nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
