@@ -61,6 +61,14 @@ app.use('/social', socialRoute);
 app.use('/youtube', youtubeRoute);
 app.use('/livetv', liveTvRoute);
 
+
+//Admin panel
+var adminHomeRoute = require('./routes/admin/home');
+
+//Admin Routes
+app.use('/admin', adminHomeRoute);
+
+
 //404  not fount
 app.use(function(req, res) {
     res
