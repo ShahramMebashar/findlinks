@@ -1,3 +1,3 @@
 module.exports = function (req, res) {
-    res.render( 'home', { title: 'Admin Home page'} );
+    res.render( 'home', { layout: 'admin', title: 'Admin Home page'} );
 }
