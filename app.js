@@ -20,6 +20,7 @@ app.engine('hbs', exphbs({
         }
     }
 }));
+
 app.set('view engine', 'hbs');
 app.set('views', path.resolve(__dirname, 'views'));
 //App middlewares and settings
