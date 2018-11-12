@@ -1,44 +1,71 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
- <div class="container">
-      <a class="navbar-brand" href="/">Find Links</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<nav class="navbar is-spaced" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      Find Links
+    </a>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/links">Links</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/social">Social Medias</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/youtube">Youtube channels</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/livetv">Live Tv's</a>
-      </li>
-      <li class="nav-item dropdown">
-        <button class="btn btn-primary dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Add Your link</a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/links/add">Add website</a>
-          <a class="dropdown-item" href="social/add">Add social medias</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Add youtube channel</a>
-        </div>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
   </div>
- </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="/links">
+        Links
+      </a>
+      <a class="navbar-item" href="/social-medias">
+        Social Medias
+      </a>
+      <a class="navbar-item" href="/youtube-channels">
+        Youtube channels
+      </a>
+      <a class="navbar-item" href="/live-tvs">
+        Live Tv's
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          Add
+        </a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="/links/add">
+            Website
+          </a>
+          <a class="navbar-item" href="/social-medias/add">
+            social medias
+          </a>
+          <a class="navbar-item">
+            Youtube channel
+          </a>
+          <hr class="navbar-divider">
+          <a class="navbar-item">
+            Live Tv
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-primary is-rounded">
+            <strong>Sign up</strong>
+          </a>
+          <a class="button is-rounded">
+            Log in
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
 </nav>
+
 
 <header>
 

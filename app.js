@@ -28,11 +28,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.resolve(__dirname, 'public')));
 app.disable('x-powered-by');
 
-//Development settings
-if(app.get('env') === 'development') {
-    app.use(logger('dev'));
-    app.use(express.errorHandler());
-}
+
 
 //Production settings
 if(app.get('env') === 'production') {
@@ -73,6 +69,12 @@ app.use(function(req, res) {
 });
 
 
+//Development settings
+if(app.get('env') === 'development') {
+    app.use(logger('dev'));
+    //TODO: later add error handler for gracefull shutdown
+    //app.use(express.errorHandler());
+}
 
 //Create server
 var PORT = process.env.PORT || 3000;
