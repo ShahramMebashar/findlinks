@@ -14,16 +14,11 @@ module.exports = async function (req, res, next) {
         console.log({...query})
     }
     try{
-        //Remove __v field from data
-        // Object.assign(query, {
-        //     __v: false
-        // });
-        
+        //ony fields of query will be fetched
         const getLinks = await Link.find({}, query);
         res.status(200).json(getLinks)
     }
     catch(err) {
         next(err);
     }
-    //const linsk = await getLinks.
 }

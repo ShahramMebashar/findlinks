@@ -19,7 +19,7 @@ function addlinkController(req, res, next) {
         title,
         lang,
         logo,
-        categories: [category],
+        categories: typeof category !== 'array' ? category : [...category],
         socials,
         status: 'pending'
     });
