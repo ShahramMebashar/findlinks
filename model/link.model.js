@@ -13,7 +13,7 @@ var linkSchema = new Schema({
     },
     logo: String,
     lang: String,
-    categories: [],
+    category: String,
     status: String,
     approved: Boolean,
     hits: {

@@ -11,7 +11,6 @@ module.exports = async function (req, res, next) {
                 [param]: true
             });
         }, {});
-        console.log({...query})
     }
     try{
         //ony fields of query will be fetched

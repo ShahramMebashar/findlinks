@@ -23,6 +23,7 @@ app.engine('hbs', exphbs({
 
 app.set('view engine', 'hbs');
 app.set('views', path.resolve(__dirname, 'views'));
+
 //App middlewares and settings
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
@@ -62,7 +63,6 @@ app.use('/social-medias', socialRoute);
 app.use('/youtube-channels', youtubeRoute);
 app.use('/live-tvs', liveTvRoute);
 
-
 //Admin panel
 var adminHomeRoute = require('./routes/admin/adminHome');
 
@@ -70,7 +70,7 @@ var adminHomeRoute = require('./routes/admin/adminHome');
 app.use('/admin', adminHomeRoute);
 
 
-//404  not fount
+//404  not found
 app.use(function(req, res) {
     res
     .status(404)
