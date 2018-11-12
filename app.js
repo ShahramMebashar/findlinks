@@ -37,6 +37,7 @@ if(app.get('env') === 'production') {
     app.set('trust proxy', true);
 }
 
+
 //Database connection
 mongoose.connect(`${dbConfig.URL}:${dbConfig.PORT}/${dbConfig.dbName}`, {useNewUrlParser: true}, function (err) {
     if(err) {
@@ -45,6 +46,7 @@ mongoose.connect(`${dbConfig.URL}:${dbConfig.PORT}/${dbConfig.dbName}`, {useNewU
     }
     console.log('successfuly connected to database');
 });
+mongoose.Promise = global.Promise;
 
 //Routes
 var homeRoute    = require('./routes/home');

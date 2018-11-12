@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 var moment = require('moment');
 var Schema = mongoose.Schema;
 var ObjectId = Schema.ObjectId;
+var Link = require('../model/link.model');
 
 function addlinkController(req, res, next) {
     const {
@@ -12,18 +13,15 @@ function addlinkController(req, res, next) {
         category,
         socials
     } = req.body;
-
-    var Link = require('../model/link.model');
     var website = new Link({
         url,
         title,
         lang,
         logo,
-        categories: typeof category !== 'array' ? category : [...category],
+        category,
         socials,
         status: 'pending'
     });
-
     Link
         .insertMany(website)
         .then(function (result) {
