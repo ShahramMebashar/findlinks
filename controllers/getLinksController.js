@@ -1,4 +1,4 @@
-var Link     = require('../model/link.model');
+var Link = require('../model/link.model');
 
 module.exports = async function (req, res, next) {  // jshint ignore:line
     var query = {};
