@@ -29,13 +29,13 @@ app.use(bodyParser.json());
 app.use(express.static(path.resolve(__dirname, 'public')));
 app.disable('x-powered-by');
 
-
-
 //Production settings
 if(app.get('env') === 'production') {
     app.set('trust proxy', true);
 }
 
+//Use global Promise for mongoose
+mongoose.Promise = global.Promise;
 
 //Database connection
 mongoose.connect(`${dbConfig.URL}:${dbConfig.PORT}/${dbConfig.dbName}`, {useNewUrlParser: true}, function (err) {
@@ -45,7 +45,6 @@ mongoose.connect(`${dbConfig.URL}:${dbConfig.PORT}/${dbConfig.dbName}`, {useNewU
     }
     console.log('successfuly connected to database');
 });
-mongoose.Promise = global.Promise;
 
 //Routes
 var homeRoute    = require('./routes/home');
