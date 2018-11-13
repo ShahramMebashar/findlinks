@@ -7,6 +7,7 @@
     "start": "nodemon app.js",
     "prod": "NODE_ENV=production nodemon app.js",
     "debug": "DEBUG=express:* nodemon app.js",
+    "debug-prod": "NODE_ENV=production DEBUG=express:* nodemon app.js",
     "test": "mocha -w test/test-server.js"
   },
   "repository": {
