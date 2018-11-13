@@ -1,7 +1,6 @@
-var mongoose = require('mongoose');
 var Link     = require('../model/link.model');
 
-module.exports = async function (req, res, next) {
+module.exports = async function (req, res, next) {  // jshint ignore:line
     var query = {};
     if(!!req.query.q) {
         query = req.query.q
@@ -14,7 +13,7 @@ module.exports = async function (req, res, next) {
     }
     try{
         //ony fields of query will be fetched
-        const getLinks = await Link.find({}, query);
+        const getLinks = await Link.find({}, query);  // jshint ignore:line
         res.status(200).json(getLinks)
     }
     catch(err) {

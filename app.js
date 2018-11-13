@@ -1,4 +1,3 @@
-'use strict';
 var express    = require('express');
 var path       = require('path');
 var bodyParser = require('body-parser');
@@ -54,9 +53,6 @@ var linksRoute   = require('./routes/links');
 var socialRoute  = require('./routes/social');
 var liveTvRoute  = require('./routes/livetv');
 var youtubeRoute = require('./routes/youtube');
-
-//Load data
-const posts = require('./playground/data').posts;
 
 //Routes 
 app.use(homeRoute);
