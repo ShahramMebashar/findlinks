@@ -20,8 +20,14 @@ function addlinkController(req, res, next) {
         logo,
         category,
         socials,
-        status: 'pending'
+        status: 'pending',
+        createdAt: moment().format('MMMM DD YYYY')
     });
+    if(url === '' || title === '') {
+        res.status(400).json({
+            message: 'url and title fields are required'
+        });
+    }
     Link
         .insertMany(website)
         .then(function (result) {
@@ -35,11 +41,9 @@ function addlinkController(req, res, next) {
                 .json(showResult);
         })
         .catch(function (err) {
-            console.log(err);
             res
-                .sendStatus(404)
-                .end(JSON.stringify(err, null, 2));
-            return;
+                .status(400)
+                .json(err);
         });
 
 }
