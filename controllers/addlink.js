@@ -1,9 +1,7 @@
-var mongoose = require('mongoose');
 var moment = require('moment');
-var Schema = mongoose.Schema;
 var Link = require('../model/link.model');
 
-function addlinkController(req, res, next) {
+function addlinkController(req, res) {
     const {
         url,
         title,
