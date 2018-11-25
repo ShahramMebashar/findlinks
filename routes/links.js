@@ -2,10 +2,10 @@ var express = require('express');
 var route = express.Router();
 var addLinkContoller = require('../controllers/addlink');
 var deleteLinkContoller = require('../controllers/deletelink');
-var getLinksController = require('../controllers/getLinksController');
+var links = require('../controllers/links');
 
 
-route.get('/', getLinksController);
+route.get('/', links);
 route.post('/add', addLinkContoller)
 route.post('/delete', deleteLinkContoller)
 
