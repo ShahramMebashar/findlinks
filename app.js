@@ -75,11 +75,25 @@ app.use(function (req, res) {
         .render('404');
 });
 
+//General Production Error Handler
+app.use(function (err, req, res, next) {
+  res.status(500).json({
+    status: 'Error',
+    message: 'Internal or Server Error'
+  })
+});
+
+
+
 //Development settings
 if (app.get('env') === 'development') {
     app.use(logger('dev'));
-    // TODO: later add error handler for gracefull shutdown
-    // app.use(express.errorHandler());
+
+    //General Developemtn Error Handler
+    app.use(function (err, req, res, next) {
+      console.log(err);
+      res.send(err.message);
+    });
 }
 
 //Create server
